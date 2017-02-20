@@ -29,7 +29,7 @@ public class Estimado {
 			}
 			System.out.println("Lineas archivo: "+estimados_totales.get(i).getCantidadLineas());
 			System.out.println("Tamaño total: "+estimados_totales.get(i).cantidadLineasAux);
-			System.out.println("---------");
+			System.out.println("------------------------");
 		}
 	}
 }

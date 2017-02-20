@@ -92,35 +92,41 @@ public class Tamaño {
 			if(palabras.length > 1){
 				if(tieneCaracteresEspeciales(linea) || esDeclaracion(linea))
 					return false;
-				boolean modificador = false;
-				for (int i = 0; i < controladoresAcceso.length; i++){
-					if(palabras[0].equals(controladoresAcceso[i]))
-						modificador = true;
-				}
-				//System.out.println(modificador);
-				if(modificador){
-					try {
-						int indice_parentecis = palabras[1].equals("static") ? 3 :  2;
-						indice_parentecis = palabras.length == 3 ? 1 :  3;
-						
-						if(tieneParentesis(palabras[indice_parentecis]) || tieneParentesis(palabras[indice_parentecis+1])
-							|| mayus(palabras[indice_parentecis]) || mayus(palabras[indice_parentecis+1])){
-							metodo_nombre_auxiliar = palabras[palabras.length-1];
-							clase_nombre_auxiliar = "";
-							return true;
-						}
-					} catch (Exception e) {}
-				}else{
-					try {
-						int indice_parentecis = palabras[0].equals("static") ? 1 :  0;
-						if(tieneParentesis(palabras[indice_parentecis]) || tieneParentesis(palabras[indice_parentecis+1])
-							|| mayus(palabras[indice_parentecis]) || mayus(palabras[indice_parentecis+1])){
-							metodo_nombre_auxiliar = palabras[palabras.length-1];
-							clase_nombre_auxiliar = "";
-							return true;
-						}
-					} catch (Exception e) {}
-				}
+//				for (int i = 0; i < palabras.length; i++) {
+//					System.out.print(palabras[i]+" ");
+//				}System.out.println("len: "+palabras.length);
+				metodo_nombre_auxiliar = palabras[palabras.length-1];
+				clase_nombre_auxiliar = "";
+				return true;
+//				boolean modificador = false;
+//				for (int i = 0; i < controladoresAcceso.length; i++){
+//					if(palabras[0].equals(controladoresAcceso[i]))
+//						modificador = true;
+//				}
+//				System.out.println(modificador);
+//				if(modificador){
+//					try {
+//						int indice_parentecis = palabras[1].equals("static") ? 3 :  2;
+//						indice_parentecis = palabras.length == 3 ? 1 :  3;
+//						System.out.println(indice_parentecis);
+//						if(tieneParentesis(palabras[indice_parentecis]) || tieneParentesis(palabras[indice_parentecis+1])
+//							|| mayus(palabras[indice_parentecis]) || mayus(palabras[indice_parentecis+1])){
+//							metodo_nombre_auxiliar = palabras[palabras.length-1];
+//							clase_nombre_auxiliar = "";
+//							return true;
+//						}
+//					} catch (Exception e) {}
+//				}else{
+//					try {
+//						int indice_parentecis = palabras[0].equals("static") ? 1 :  0;
+//						if(tieneParentesis(palabras[indice_parentecis]) || tieneParentesis(palabras[indice_parentecis+1])
+//							|| mayus(palabras[indice_parentecis]) || mayus(palabras[indice_parentecis+1])){
+//							metodo_nombre_auxiliar = palabras[palabras.length-1];
+//							clase_nombre_auxiliar = "";
+//							return true;
+//						}
+//					} catch (Exception e) {}
+//				}
 			}
 		}
 		return false;

@@ -27,11 +27,8 @@ public class Lector {
 			      if (listOfFiles[i].isFile()) {
 			    	  String type = listOfFiles[i].getName().substring(listOfFiles[i].getName().indexOf('.'));
 			    	  if(type.toLowerCase().equals(".java")){
-			    		  System.out.println(listOfFiles[i].getName());
 			    		  nombres_archivos.add(listOfFiles[i].getName());
 			    		  lineas_archivos.add(LeerLineas(listOfFiles[i]));
-			    		  
-					      System.out.println("File " + listOfFiles[i].getName());
 			    	  }
 			      } else if (listOfFiles[i].isDirectory()) {
 			    	  LeerDirectorio(listOfFiles[i].getAbsolutePath());
