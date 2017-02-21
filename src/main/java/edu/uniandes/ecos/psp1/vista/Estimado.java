@@ -35,19 +35,19 @@ public class Estimado {
 			//Iterar clases
 			for (int j = 0; j < estimados_totales.get(i).getClases().size(); j++) {
 				System.out.println("\tNombre: "+estimados_totales.get(i).getClases().get(j).getNombre());
-				System.out.println("\tLineas: "+estimados_totales.get(i).getClases().get(j).getCantidad_lineas());
+				System.out.println("\tLineas: "+estimados_totales.get(i).getClases().get(j).getCantidad_lineas()+" LOC");
 				System.out.println("\tMetodos: ");
 
 				total_metodos += estimados_totales.get(i).getClases().get(j).getMetodos().size();
 				//Iterar Metodos
 				for (int k = 0; k < estimados_totales.get(i).getClases().get(j).getMetodos().size(); k++) {
 					System.out.println("\t\tNombre: "+estimados_totales.get(i).getClases().get(j).getMetodos().get(k).getNombre());
-					System.out.println("\t\tLineas: "+estimados_totales.get(i).getClases().get(j).getMetodos().get(k).getLineas());
+					System.out.println("\t\tLineas: "+estimados_totales.get(i).getClases().get(j).getMetodos().get(k).getLineas()+" LOC");
 				}
 				System.out.println();
 			}
 			System.out.println("Lineas archivo: "+estimados_totales.get(i).getCantidadLineas());
-			System.out.println("Tamaño total: "+estimados_totales.get(i).getCantidadLineasTotales());
+			System.out.println("Tamaño total: "+estimados_totales.get(i).getCantidadLineasTotales()+" LOC");
 			System.out.println("------------------------");
 			System.out.println();
 			total_clases += estimados_totales.get(i).getClases().size();
@@ -57,6 +57,6 @@ public class Estimado {
 		System.out.println("Resultado");
 		System.out.println("Cantidad de clases totales: "+total_clases);
 		System.out.println("Cantidad de metodos totales: "+total_metodos);
-		System.out.println("Tamaño total: "+tamaño_total_final);
+		System.out.println("Tamaño total: "+tamaño_total_final+" LOC");
 	}
 }

@@ -200,7 +200,7 @@ public class Archivo {
 	 */
 	private boolean esPalabraReservada(String linea){
 		if(linea.length() > 5)
-			if(linea.substring(0, 5).equals("catch"))
+			if(linea.contains("catch"))
 				return true;
 		return false;
 	}

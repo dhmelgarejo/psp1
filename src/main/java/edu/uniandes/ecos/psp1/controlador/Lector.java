@@ -53,6 +53,14 @@ public class Lector {
 			    	  LeerDirectorio(listOfFiles[i].getAbsolutePath());
 			      }
 			 }
+		}else{
+		    if (folder.isFile()) {
+		    	String type = folder.getName().substring(folder.getName().indexOf('.'));
+		    	if(type.toLowerCase().equals(".java")){
+		    		nombres_archivos.add(folder.getName());
+		    		lineas_archivos.add(LeerLineas(folder));
+		    	}
+		    } 
 		}
 	}
 	
