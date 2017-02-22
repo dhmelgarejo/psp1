@@ -29,8 +29,8 @@ public class Lector {
 		nombres_archivos = new ArrayList<String>();
 		LeerDirectorio(path);
 		for (int i = 0; i < lineas_archivos.size(); i++) {
-			Archivo tamaño_archivo = new Archivo(lineas_archivos.get(i), nombres_archivos.get(i));
-			estimados_totales.add(tamaño_archivo);
+			Archivo tamano_archivo = new Archivo(lineas_archivos.get(i), nombres_archivos.get(i));
+			estimados_totales.add(tamano_archivo);
 		}
 	}
 	
